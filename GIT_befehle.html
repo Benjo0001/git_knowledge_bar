@@ -431,8 +431,11 @@
 
             <p>Das waren die Basics (local mit git arbeiten)</p>            
         </div>
+        <br><br>
 
         <div>
+            <h1>Remotes</h1>
+            <br>
             <h3 class="highlight">Remotes hinzugefügen</h3>
             <ul>
                 <li>Remotes abfragen</li>
@@ -440,6 +443,106 @@
                 <li>Remote anlegen</li>
                 <p class="code">git remote add *name* *url*</p>
             </ul>
+
+            <h3 class="highlight">Remote aktualisieren</h3>
+            <ul>
+                <li>branch in remote pushen</li>
+                <p class="code">git push *remote-name* *branch-name*</p>
+                
+                <p class="code">git push origin master</p>
+                <p>den master branch pushen</p>
+
+                <li>Upstream mit -u parameter setzen</li>
+                <p class="code">git push -u origin master</p>
+                <p>das bedeutet das der locale master branch mit dem remote master branch
+                    verknüpft ist -> dann ist das angeben danach nicht mehr notwendig und man kann 
+                    dann nur mit "git push" die Änderungen hochladen
+                </p>
+                <p class="code">git push</p>
+            </ul>
+        </div>
+
+        <br><br>
+        <div>
+            <h3 class="highlight">Lokales Repo aktualisieren</h3>
+            <ul>
+                <li>zum ersten mal in aktuelles Verzeichnis kopieren</li>
+                <p class="code">git clone *remote-url* .</p>
+                <p>Punkt am Ende nicht vergessen um ins aktuelle Verzeichnis zu clonen</p>
+                <br>
+
+                <li>neue Daten laden und mergen</li>
+                <p class="code">git pull origin master</p>
+
+                <p>oder mit gesetzten upstream: <p class="code">git pull</p></p>
+            </ul>
+
+            <p class="highlight">Pulling</p>
+            <p><p class="code">git pull</p> merged remote-branch in lokalen branch </p>
+            
+            <p>auch in zwei Schritten möglich: <p class="code">git fetch</p> 
+            und dann <p class="code">git merge</p></p>
+
+            <p>Erklärung wozu: 
+                Bsp. ich will los von der Arbeit, aber erst noch weiter arbeiten..
+                mache schnell noch einen <p class="code">git fetch</p> , hole mir die Änderungen
+                und kann dann im Zug einfach weiter arbeiten und die Änderungen dabei auch anschauen
+
+            </p>
+
+            <h3 class="highlight">Remotes auflisten</h3>
+            <p class="code">git branch -a </p>
+            <p>zeigt auch die remote branches (nicht nur die localen)</p>
+
+
+            
+            
+            <h3 class="highlight">Praxisbespiel Remote hinzufügen bei vorhandenen Repository</h3>
+            <p class="code">git remote add origin *git-url*</p>
+
+            <p class="code">git remote</p>
+            <p>zeigt alle remotes an</p>
+
+            <p class="code">git remote -v</p>
+            <p>zeigt alle remotes mit URL an</p>
+
+            <p class="code">git push -u origin master</p>
+            <p>pusht den aktuellen Stand des Repos zum (vorher verbundenen) remote (git)</p>
+        </div>
+
+        <div>
+            <h3>Pull Request durchführen</h3>
+            <p class="code">git push orgin *my-branch-name-toPush*</p>
+            <p class="code">git push orgin superFeature</p>
+
+            <p>pull request -> füge bitte die Änderungen in den remote (deinen) master ein</p>
+
+
+            <p>wenn jemand anderes einen PULL Request gemacht hat</p>
+            <p class="code">git branch</p><p>nochmal branch checken</p>
+            <p class="code">git pull</p><p>änderungen holen</p>
+            <p class="code">git merge superFeature</p><p>merge mal local superFeature</p>
+            <p>git merge ** Updating fd0890 ... e8z4293 Fast Forward
+                means that no other changes in master are done after this state from merging
+            </p>
+            <p>branch is ahead of 'origin/master' by 1 commit -> genau diesen einen commit ist der aktuelle 
+                branch voraus
+            </p>
+            <p class="code">git push</p><p> der git pullrequest wurde in den master geschrieben (gemerged)</p>
+
+
+            <h3>Summary</h3>
+            <ul>
+                <li>Es gibt ein verteiltes Versionskontrollsystem</li>
+                <li>Es gibt drei Bereiche</li>
+                <ul>
+                    <li>Repository</li>
+                    <li>Staging</li>
+                    <li>Arbeitsverzeichnis</li>
+                </ul>
+                <li>fast alle Befehle lassen sich lokal ausführen</li>
+            </ul>
+            <img src="rsc/Tutorial_ThomasClaudius.png" alt="">
         </div>
 
     
