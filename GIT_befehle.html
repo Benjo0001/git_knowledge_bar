@@ -42,10 +42,11 @@
             white-space: pre;
             margin: 1em 0px;
         }
-        star {
-            font-weight: bold;
 
+        highlight {
+            font-weight: bold;
         }
+
     </style>
 </head>
 <body>
@@ -311,7 +312,7 @@
                 <p class="code">git difftool</p>
 
             </ul>
-            <p class="star">Datei entfernen</p>
+            <p class="highlight">Datei entfernen</p>
             <p class="code"></p>
 
 
@@ -334,13 +335,118 @@
 
                 <p> "you are in 'detached Head' state ... " </p>
 
-                
 
+                <p>Zurück zum master Branch (ursprünglicher Stand vor checkout</p>
+                <p class="code">git checkout master</p>
+
+                <p>mit <p class="code">git checkout </p> wechsel möglich zu</p>
+                <ul>
+                    <li>Snapshots</li>
+                    <li>branches</li>
+                    <li>(selbst hinterlegte) tags</li>
+
+                </ul>
             </ul>
 
         </div>
 
+        <div>
+            <h3>Dateien ignorieren</h3>
+            <ul>
+                <li>.gitIgnore Datei anlegen</li>
+                <li>Syntax:</li>
+                <p># startende Zeilen werdne ignoriert</p>
+                <p>! Negationen</p>
+                <p> / am Anfang um Rekursionen zu vermeiden</p>
+                <p> / am Ende, um Verzeichnis zu wählen</p>
 
+            </ul>
+            <p>global patterns:</p>
+            <p>Beispiele</p>
+            <p>
+                #Alle txt Dateien ignorieren
+                *.txt
+                #nur txt-dateien aus root-ordner ignorieren
+                /*.txt
+                # aber nicht die readme
+                !readme.txt
+                # alle dateien im myProject/bin -Verzeichnis ignorieren
+                myProject/bin
+                # alle .suo Dateien im myProject-Verzeichnis
+                # inclusive Unterverzeichnisse ignorieren
+                myProject/**/*.suo
+            </p>
+        </div>
+
+        <div>
+            <h3>Branches</h3>
+            <ul>
+                <li>Branches anzeigen</li>
+                <p class="code">git branch</p>                
+
+                <li>Branch erstellen</li>
+                <p class="code">git branch myNewFeature</p>
+                <li>branch ins Arbeitsverzeichnis ausschecken</li>
+                <p class="code">git checkout myNewFeature</p>
+
+                <li>zurück zum Master wechsel</li>
+                <p class="code">git checkout master</p>
+            </ul>
+
+            <p class="highlight">Änderungen in Master branch übernehmen</p>
+            <p>Branch mergen (vom master branch aus ausrufen)</p>
+            <p class="code">git merge myNewFeature</p>
+
+            <p class="code">git log --pretty=oneline --graph</p>
+
+
+            <p class="highlight">resolve merge conflict</p>
+            <p> &lt;&lt;&lt;&lt;&lt;&lt;&lt;HEAD  is from master branch (or branch)</p>
+            <p class="code">Here is code... writen</p>
+            <p>======= trennen des codes</p>
+            <p class="code">code... das ist in dem anderen branch passiert</p>
+            <p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; myNewFeature</p>
+
+            <p class="highlight">tag erstellen</p>
+            <p class="code">git checkout 14fa2 </p>
+            <p>ersten 5 Zeichen vom Hashwert eines commits</p>
+            <p class="code">git tag -a AllesNeuFertigerEntwurf</p>
+            
+            <p class="code">git status</p>
+            <p>keine neuen Änderungen</p>
+            <p class="code">git tag</p>
+            <p>zeigt alle erstellten Tags an</p>
+
+            <p class="code">git checkout AllesNeuFertigerEntwurf</p>
+            <p>checkout zu "Tagnamen" (in das Arbeitsverzeichnis /working tree geladen)</p>
+
+
+
+
+            <p>Zusammenfassung: zum speichern ist es immer erforderlich 
+                im master branche zu arbeiten oder einen neuen branch zu erstellen
+                um diesen zu commiten
+            </p>
+
+
+            <p>Das waren die Basics (local mit git arbeiten)</p>            
+        </div>
+
+        <div>
+            <h3 class="highlight">Remotes hinzugefügen</h3>
+            <ul>
+                <li>Remotes abfragen</li>
+                <p class="code">git remote</p>
+                <li>Remote anlegen</li>
+                <p class="code">git remote add *name* *url*</p>
+            </ul>
+        </div>
+
+    
+
+
+
+    <!--  end of div Git-Grundlagen für Entwickler-->
     </div>
 
 </body>
