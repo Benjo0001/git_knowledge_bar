@@ -12,6 +12,9 @@
     line-height: 1.45;
     background-color: #fcf9d2;
     border-radius: 3px;
+    width: 50em;
+    text-align: left;
+    /* margin-left: 10em; */
 }
 .output{
     color: rgb(122, 127, 154);
