@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main-div{
+            margin: auto;
+            width: 960px;
+            text-align: left;
+        }
+        .code{
+            color: rgb(104, 104, 3);
+            font-family: monospace;
+            padding: 16px;
+            overflow: auto;
+            font-size: 100%;
+            line-height: 1.45;
+            background-color: #fcf9d2;
+            border-radius: 3px;
+        }
+        .output{
+            color: rgb(122, 127, 154);
+            font-family: monospace;
+            padding: 10px;
+            overflow: auto;
+            font-size: 100%;
+            line-height: 1.25;
+            background-color: #f6f8fa;
+            border-radius: 3px;
+        }
+
+        .note{
+            color: rgb(45, 69, 131);
+        }
+    </style>
+</head>
+<body>
+    <div id="main-div">
+    
+        <h1>Setting up SSH Key for GitHub</h1>
+
+        <ol>
+            <p>-> Open GitHub</p>  
+            <p>Settings -> SSH keys -> "Check out guide to generating ssh"</p>
+            <p><a href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">github guide</a></p>
+            <li>Check for existing Keys in Terminal</li>
+            <p class="code">ls -al ~/.ssh</p>
+
+            <li>generate new ssh key</li>
+            <p class="code">ssh-keygen -t rsa -b 4096 -C "ben.hoppe6.0@gmail.com"</p>
+
+            <p>Enter file in which to save the key (/Users/stevejobs/.ssh/id_rsa):  </p>
+            <p>/Users/stevejobs/.ssh/id_github_benjo0001_rsa</p>
+            <p>((I choose a different file name like that above))</p>
+
+            <p>Enter passphrase: </p><p>(git pas e.g.) and Enter</p>
+
+            <p><b>ssh key successfully added</b></p>
+            
+            <li>add ssh key to ssh agent</li>
+
+            <p class="code">eval "$(ssh-agent -s)"</p>
+            <p class="output">Agent pid 17585</p>
+
+            <br>
+            <p>First, check to see if your ~/.ssh/config file exists in the default location.</p>
+            <p>if it doesn't exist <p class="code">touch ~/.ssh/config</p></p>
+
+            <p class="code">open ~/.ssh/config</p>
+
+            <p class="note">add this to your config file</p>
+            <p class="code">
+                Host *
+                AddKeysToAgent yes
+                UseKeychain yes
+                IdentityFile ~/.ssh/id_rsa</p>
+            
+            <p class="note">Add your SSH private key to the ssh-agent and store your passphrase in the keychain.</p>
+            <p class="code">ssh-add -K ~/.ssh/id_rsa</p>
+            
+            <li>Adding a new SSH key to your GitHub account</li>
+            
+            <p class="note">1. möglichkeit den Ordner mit den ssh key (public/private) anzeigen lassen und separat öffenen</p>
+            <p class="code">open .ssh</p>
+
+            <p class="note">2. Möglichkeit: den public key direct kopieren</p>
+            <p class="code">pbcopy &lt; ~/.ssh/id_rsa.pub</p>
+            
+            
+        </ol>
+
+    </div>
+</body>
+</html>
