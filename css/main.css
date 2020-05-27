@@ -1,0 +1,71 @@
+#main-div{
+    margin: auto;
+    width: 960px;
+    text-align: left;
+}
+.code{
+    color: rgb(104, 104, 3);
+    font-family: monospace;
+    padding: 16px;
+    overflow: auto;
+    font-size: 100%;
+    line-height: 1.45;
+    background-color: #fcf9d2;
+    border-radius: 3px;
+}
+.output{
+    color: rgb(122, 127, 154);
+    font-family: monospace;
+    padding: 10px;
+    overflow: auto;
+    font-size: 100%;
+    line-height: 1.25;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+}
+
+.note{
+    color: rgb(45, 69, 131);
+}
+
+
+ /* was supposed for small sub headlines */
+ .highlight {
+    font-weight: bold;
+}
+
+
+a.ytLink{
+    color: rgb(204, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* randomly copied css, maybe useful or not */
+.post-text, .wmd-preview {
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.post-text, .wmd-preview, .comment-copy, .question-status, .excerpt{
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+body *, body *:before, body *:after {
+    box-sizing: inherit;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    /* margin: 0;
+    padding: 0;
+    border: 0; */
+    font: inherit;
+    /* font-size: 100%; */
+    vertical-align: baseline;
+}
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px;
+}

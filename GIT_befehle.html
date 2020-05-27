@@ -4,603 +4,538 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .code{
-            color: rgb(104, 104, 3);
-            font-family: monospace;
-            padding: 16px;
-            overflow: auto;
-            font-size: 100%;
-            line-height: 1.45;
-            background-color: #fcf9d2;
-            border-radius: 3px;
-        }
-        .output{
-            color: rgb(122, 127, 154);
-            font-family: monospace;
-            padding: 10px;
-            overflow: auto;
-            font-size: 100%;
-            line-height: 1.25;
-            background-color: #f6f8fa;
-            border-radius: 3px;
-        }
-        .note{
-            color: rgb(45, 69, 131);
-        }
-
-        /* was supposed for small sub headlines */
-        .highlight {
-            font-weight: bold;
-        }
-
-
-        a.ytLink{
-            color: rgb(204, 0, 0);
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        /* randomly copied css, maybe useful or not */
-        .post-text, .wmd-preview {
-            margin-bottom: 5px;
-            word-wrap: break-word;
-            font-size: 15px;
-            line-height: 1.3;
-        }
-
-        .post-text, .wmd-preview, .comment-copy, .question-status, .excerpt{
-            font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-        }
-        body *, body *:before, body *:after {
-            box-sizing: inherit;
-        }
-
-        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-            /* margin: 0;
-            padding: 0;
-            border: 0; */
-            font: inherit;
-            /* font-size: 100%; */
-            vertical-align: baseline;
-        }
-        pre {
-            display: block;
-            font-family: monospace;
-            white-space: pre;
-            margin: 1em 0px;
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <h1>GIT Book</h1>
-    <a href="https://git-scm.com/book/en/v2" class="ytLink">Book of GIT</a>
+    <div class="main-div">
 
+        <h1>GIT Book</h1>
+        <a href="https://git-scm.com/book/en/v2" class="ytLink">Book of GIT</a>
 
-    <h1>GIT Basics</h1>
-    <h3>Repositories</h3>
-    <p>these are the containers for your projects</p>
-    <ul>
-        <li>local repository</li>
-        <li>remote repository</li>
-    </ul>
 
-    <h1>Quellen</h1>
-    <a href="https://git-scm.com/docs/gittutorial">git scm docs</a>
-
-
-
-    <h1>GIT Basiseinstellungen</h1>
-
-    <h3>GIT global user name and email</h3>
-    <p class="code">git config --global user.name "Your Name Comes Here"</p>
-    <p class="code">git config --global user.email you@yourdomain.example.com</p>
-    <p>these are just used to show remember who does the commit</p>
-
-
-
-
-
-
-    <h1>wichtigste GIT Befehle</h1>
-
-    <h3>Git Initialisieren</h3>
-    <p>terminal -> cd ... zum Betreffenden Ordner.. </p>
-
-
-    <p class="code">git init .</p>
-    <p>Den gesamten Ordner ins Git Verzeichnis bringen</p>
-
-    <p class="code">ls -a</p>
-    <p>check for hidden files -> check if there is a .git folder</p>
-    <br>
-
-    <p class="code">git status</p>
-    <p>den aktuellen Status anschauen -> welche Änderungen habe ich gemacht welche noch nicht "repositioniert" sind</p>
-    
-    <p class="code">git status -s</p>
-    <p>kurze status Abfrage</p>
-
-
-
-    <p class="code">git add .</p>
-    <p>durch . werden alle Dateien im Repository werden in der aktuellen Git-Version gestaged(hinzugefügt),
-        -> die Änderungen sind somit breit zum commiten</p>
-
-        
-    <p class="code">git add *fileName*</p>
-    <p>die genannte Datei im Repository wird in der aktuellen Git-Version gestaged(hinzugefügt),
-        -> die Änderungen sind somit breit zum commiten</p>
-
-    <p class="code">git commit -m "*insert comment on this commit, must have!*"</p>
-    <p>git commit erstellen mit (-m essage) Änderungscommentar angeben</p>
-
-
-    <p>Alternatively, instead of running git add beforehand, you can use</p>
-    <p class="code">git commit -a</p>
-    <p>which will automatically notice any modified (but not new) files, add them to the index, and commit, all in one step.</p>
-    
-
-    <p class="code">git diff</p>
-    <p>alle Änderungen welche noch nicht gestaged sind anzeigen</p>
-    <p class="code">git diff --cached</p>
-    
-
-    <h3>Git Änderungen Verwerfen</h3>
-    <p class="code">git checkout allesNeu.html</p>
-    <p>Die aktuellen Änderungen in der Datei "allesNeu.html" zurücksetzen</p>
-
-
-    <h3>Git Commit Verlauf</h3>
-    <p class="code">git log</p>
-    <p>Commit Verlauf anzeigen</p>
-
-
-    <h3>Git help / user's manuel</h3>
-    <p class="code">man git-*</p>
-    <p>* stands for any git command</p>
-    <p class="code">man git-log</p>
-    <p> shows the manuel for git log</p>
-    
-
-    
-
-
-
-    <h3>Using the remote repository</h3>
-    <p class="code">git push origin master</p>
-    <p>git ask for the credentials (of github)</p>
-
-
-    <h3>resolving merge conflict</h3>
-    <a href="https://www.youtube.com/watch?v=JtIX3HJKwfo"> https://www.youtube.com/watch?v=JtIX3HJKwfo</a>
-
-
-   
-
-    <br>
-    <a href="https://www.youtube.com/watch?v=lR_hYwCAaH4" class="ytLink">GIT Remotes - The Coding Train</a></p>
-
-    <a href="https://www.youtube.com/watch?v=JtIX3HJKwfo" class="ytLink">Resolving Merge Conflicts</a>
-
-    <a href="https://git-scm.com/book/de/v2/Appendix-C%3A-Git-Kommandos-Setup-und-Konfiguration" class="nLink">How to set up other Text editor</a>
-
-
-
-    <h3>GOOG TO KNOW</h3>
-    <p class="code">press q when ((END)) blocks the terminal</p>
-    <h3>USING VIM (VI) for GIT changes</h3>
-    <p>:i</p>
-    <p>--INSERT-- shows up end of the line</p>
-    <p class="code">ESC + :wq</p>
-
-    <p class="code">git config --global core.editor "code --wait"</p>
-    <p>set up Visual Studio Code as Commit Text Editor // set code (VS Code to PATH!!!)</p>
-
-    <p class="code">git config --global core.editor "vim"</p>
-    <p>setting up vim as (terminal) editor better way as standart</p>
-
-
-    <p class="code">git config --global core.editor vi</p>
-    <p>default on my mac</p>
-
-    <h3>Zusammenfassung using VIM</h3>
-    <div class="post-text" itemprop="text">
-        <p>If you haven't change the default git's editor, that "new view" is the Vi program.</p>
-        
-        <p>To save your commit message using Vi, follow the next steps:</p>
-        
-        <ol>
-        <li>Type <code>i</code></li>
-        <li>Write your message</li>
-        <li>Type the <code>ESC</code> key</li>
-        <li>Type <code>:wq</code></li>
-        <li>DONE! :D</li>
-        </ol>
-        
-        <p>Typing <code>:q</code>, step 4, is not enough beacuse just means <strong>QUIT</strong> without saving. That's why you need <code>:wq</code>, which means <strong>WRITE</strong> and <strong>QUIT</strong>.</p>
-        
-        <p>You can write your commit message using your favourite editor(vim, emacs, etc.). To achieve this, you can use configuration parameter or environment variables, listed in order:</p>
-        
-        <ol>
-        <li><strong>GIT_EDITOR</strong> environment variable</li>
-        <li><strong>core.editor</strong> configuration option</li>
-        <li><strong>VISUAL</strong> environment variable</li>
-        <li><strong>EDITOR</strong> environment variable</li>
-        </ol>
-        
-        <p>Using the configuration option type something like this:</p>
-        
-        <pre><code>$git config --global core.editor "nano"
-        </code></pre>
-        
-        <p>Or if you want to use enviroment variables, add something like this to your <code>.bash_profile</code></p>
-        
-        <pre><code>$export GIT_EDITOR="PATH/TO/YOUR/EDITOR"
-        </code></pre>
-    </div>
-
-
-    <h3>Writing good COMMIT messages</h3>
-    <p>A commit message should answer three primary questions:
-        <li>Why is this change necessary?</li> 
-        <li>How does this commit address the issue?</li>
-        <li>What effects does this change have?</li>
-    </p>
-     <br><br>
-
-     <h3>edit git commit</h3>
-     <p class="code">git commit --amend -m "Fixed bug" -m "Closes #issue"</p>
-    <a href="https://engagor.github.io/blog/2017/04/03/how-to-edit-commit-description/" class="nLink">Edit a commit</a>
-
-
-
-
-
-    <h3>Check your GIT Settings</h3>
-    <p class="code">git config --list</p>
-    <p class="code">git config -l</p>
-    <p class="code">git config -l --show-origin</p>
-    
-    <p>file:/usr/local/git/etc/gitconfig</p> <p>in diesem file werden die Einstellungen gespeichert</p>
-
-    <p>You can also check what Git thinks a specific key’s value is by typing git config <key>:</p>
-    <p class="code">$ git config user.name</p>
-
-    
-
-    <div>
-        <h3>GIT Grundlagen Video (Notizen)</h3>
-        <a href="https://www.youtube.com/watch?v=6uvzIMdqV2U">Git-Grundlagen für Entwickler - Alles was man zum Einstieg wissen muss</a>
-    
-        <p class="code">git config --global core.editor notepad</p> 
-        <p>choose notepad text editor (microsoft version) for edit commit message</p>
-    
-    
-        <h4>Das Arbeitsverzeichnis</h4>
-        <p>Aufbau: 
-            <div>Arbeitsbereich (der Projektordner (mit .git Repository))</div>
-            <div>Staging Bereich (.git-Ordner)</div>
-            <div>Repository/Datenbank (.git)</div> 
-            <div class="picture_div">
-                <img src="rsc/Arbeitsverzeichnis_git.png" alt="Arbeitsverzeichnis">
-            </div>
-        </p>
-        
-        <div>
-            <p>das Arbeitsverzeichnis</p>
-            <ol>
-                <li>Checkout</li>
-                <li>Staging</li>
-                <li>Commit</li>        
-            </ol>
-        </div>
-
-        <div>
-            <p>Dateizustände</p>
-            <ul>
-                <li>untracked</li>
-                <li>unmodified</li>
-                <li>modified</li>
-                <li>staged</li>
-            </ul>
-            <div class="picture_div">
-                <img src="rsc/Datei_status_git.png" alt="Arbeitsverzeichnis">
-            </div>
-        </div>
-
-        <div>
-            <p class="code">git status</p> 
-            <p>wenn text rot -> nicht in der Staging area</p>
-            <p>wenn text grün in der staging area-> fertig für den commit</p>
-
-        </div>
-
-        <div>
-            <h3 >weitere nützliche Befehle</h3>
-            <ul>
-                <li>Datei entfernen</li>
-                <p class="code">git rm dateiname.txt</p>
-                
-                <li>Diff anzeigen</li>
-                <p class="code">git diff</p>
-                <p>-> vergleicht Arbeitsverzeichnis mit dem Repository!</p>
-                <p>nach: <p class="code">git add .</p> sind keine Änderungen mehr sichtbar</p>
-
-                <p>Dateien vergleichen vom Arbeitsbereich zu aktuellen Commit geht mit</p>
-                <p class="code">git diff --staged</p>
-
-
-                <li>Diff in Tool anzeigen</li>
-                <p class="code">git difftool</p>
-
-            </ul>
-            <p class="highlight">Datei entfernen</p>
-            <p class="code"></p>
-
-
-            <p>"working tree clean" entspricht dem Arbeitsverzeichnis (welches leer ist)</p>
-
-
-            <ul>
-                <li>Zeigt commits an (mit Snapshot-Hash SHA1)</li>
-                <p class="code">git log</p>
-
-                <p>schönere Darstellung</p>
-                <p class="code">git log --pretty=oneline</p>
-
-
-
-                <p>nochmal zu einem bestimmten Zeitpunkt des Code springen</p>
-                <p class="code">git checkout 1f7a6</p>
-                <p>ersten 5 Zeichen vom Hash kopieren</p>
-
-
-                <p> "you are in 'detached Head' state ... " </p>
-
-
-                <p>Zurück zum master Branch (ursprünglicher Stand vor checkout</p>
-                <p class="code">git checkout master</p>
-
-                <p>mit <p class="code">git checkout </p> wechsel möglich zu</p>
-                <ul>
-                    <li>Snapshots</li>
-                    <li>branches</li>
-                    <li>(selbst hinterlegte) tags</li>
-
-                </ul>
-            </ul>
-
-        </div>
-
-        <div>
-            <h3>Dateien ignorieren</h3>
-            <ul>
-                <li>.gitIgnore Datei anlegen</li>
-                <li>Syntax:</li>
-                <p># startende Zeilen werdne ignoriert</p>
-                <p>! Negationen</p>
-                <p> / am Anfang um Rekursionen zu vermeiden</p>
-                <p> / am Ende, um Verzeichnis zu wählen</p>
-
-            </ul>
-            <p>global patterns:</p>
-            <p>Beispiele</p>
-            <p>
-                #Alle txt Dateien ignorieren
-                *.txt
-                #nur txt-dateien aus root-ordner ignorieren
-                /*.txt
-                # aber nicht die readme
-                !readme.txt
-                # alle dateien im myProject/bin -Verzeichnis ignorieren
-                myProject/bin
-                # alle .suo Dateien im myProject-Verzeichnis
-                # inclusive Unterverzeichnisse ignorieren
-                myProject/**/*.suo
-            </p>
-        </div>
-
-        <div>
-            <h3>Branches</h3>
-            <ul>
-                <li>Branches anzeigen</li>
-                <p class="code">git branch</p>                
-
-                <li>Branch erstellen</li>
-                <p class="code">git branch myNewFeature</p>
-                <li>branch ins Arbeitsverzeichnis ausschecken</li>
-                <p class="code">git checkout myNewFeature</p>
-
-                <li>zurück zum Master wechsel</li>
-                <p class="code">git checkout master</p>
-            </ul>
-
-            <p class="highlight">Änderungen in Master branch übernehmen</p>
-            <p>Branch mergen (vom master branch aus ausrufen)</p>
-            <p class="code">git merge myNewFeature</p>
-
-            <p class="code">git log --pretty=oneline --graph</p>
-
-
-            <p class="highlight">resolve merge conflict</p>
-            <p> &lt;&lt;&lt;&lt;&lt;&lt;&lt;HEAD  is from master branch (or branch)</p>
-            <p class="code">Here is code... writen</p>
-            <p>======= trennen des codes</p>
-            <p class="code">code... das ist in dem anderen branch passiert</p>
-            <p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; myNewFeature</p>
-
-            <p class="highlight">tag erstellen</p>
-            <p class="code">git checkout 14fa2 </p>
-            <p>ersten 5 Zeichen vom Hashwert eines commits</p>
-            <p class="code">git tag -a AllesNeuFertigerEntwurf</p>
-            
-            <p class="code">git status</p>
-            <p>keine neuen Änderungen</p>
-            <p class="code">git tag</p>
-            <p>zeigt alle erstellten Tags an</p>
-
-            <p class="code">git checkout AllesNeuFertigerEntwurf</p>
-            <p>checkout zu "Tagnamen" (in das Arbeitsverzeichnis /working tree geladen)</p>
-
-
-
-
-            <p>Zusammenfassung: zum speichern ist es immer erforderlich 
-                im master branche zu arbeiten oder einen neuen branch zu erstellen
-                um diesen zu commiten
-            </p>
-
-
-            <p>Das waren die Basics (local mit git arbeiten)</p>            
-        </div>
-        <br><br>
-
-        <div>
-            <h1>Remotes</h1>
-            <br>
-            <h3 class="highlight">Remotes hinzugefügen</h3>
-            <ul>
-                <li>Remotes abfragen</li>
-                <p class="code">git remote</p>
-                <li>Remote anlegen</li>
-                <p class="code">git remote add *name* *url*</p>
-            </ul>
-
-            <h3 class="highlight">Remote aktualisieren</h3>
-            <ul>
-                <li>branch in remote pushen</li>
-                <p class="code">git push *remote-name* *branch-name*</p>
-                
-                <p class="code">git push origin master</p>
-                <p>den master branch pushen</p>
-
-                <li>Upstream mit -u parameter setzen</li>
-                <p class="code">git push -u origin master</p>
-                <p>das bedeutet das der locale master branch mit dem remote master branch
-                    verknüpft ist -> dann ist das angeben danach nicht mehr notwendig und man kann 
-                    dann nur mit "git push" die Änderungen hochladen
-                </p>
-                <p class="code">git push</p>
-            </ul>
-        </div>
-
-        <br><br>
-        <div>
-            <h3 class="highlight">Lokales Repo aktualisieren</h3>
-            <ul>
-                <li>zum ersten mal in aktuelles Verzeichnis kopieren</li>
-                <p class="code">git clone *remote-url* .</p>
-                <p>Punkt am Ende nicht vergessen um ins aktuelle Verzeichnis zu clonen</p>
-                <br>
-
-                <li>neue Daten laden und mergen</li>
-                <p class="code">git pull origin master</p>
-
-                <p>oder mit gesetzten upstream: <p class="code">git pull</p></p>
-            </ul>
-
-            <p class="highlight">Pulling</p>
-            <p><p class="code">git pull</p> merged remote-branch in lokalen branch </p>
-            
-            <p>auch in zwei Schritten möglich: <p class="code">git fetch</p> 
-            und dann <p class="code">git merge</p></p>
-
-            <p>Erklärung wozu: 
-                Bsp. ich will los von der Arbeit, aber erst noch weiter arbeiten..
-                mache schnell noch einen <p class="code">git fetch</p> , hole mir die Änderungen
-                und kann dann im Zug einfach weiter arbeiten und die Änderungen dabei auch anschauen
-
-            </p>
-
-            <h3 class="highlight">Remotes auflisten</h3>
-            <p class="code">git branch -a </p>
-            <p>zeigt auch die remote branches (nicht nur die localen)</p>
-
-
-            
-            
-            <h3 class="highlight">Praxisbespiel Remote hinzufügen bei vorhandenen Repository</h3>
-            <p class="code">git remote add origin *git-url*</p>
-
-            <p class="code">git remote</p>
-            <p>zeigt alle remotes an</p>
-
-            <p class="code">git remote -v</p>
-            <p>zeigt alle remotes mit URL an</p>
-
-            <p class="code">git push -u origin master</p>
-            <p>pusht den aktuellen Stand des Repos zum (vorher verbundenen) remote (git)</p>
-        </div>
-
-        <div>
-            <h3>Pull Request durchführen</h3>
-            <p class="code">git push orgin *my-branch-name-toPush*</p>
-            <p class="code">git push orgin superFeature</p>
-
-            <p>pull request -> füge bitte die Änderungen in den remote (deinen) master ein</p>
-
-
-            <p>wenn jemand anderes einen PULL Request gemacht hat</p>
-            <p class="code">git branch</p><p>nochmal branch checken</p>
-            <p class="code">git pull</p><p>änderungen holen</p>
-            <p class="code">git merge superFeature</p><p>merge mal local superFeature</p>
-            <p>git merge ** Updating fd0890 ... e8z4293 Fast Forward
-                means that no other changes in master are done after this state from merging
-            </p>
-            <p>branch is ahead of 'origin/master' by 1 commit -> genau diesen einen commit ist der aktuelle 
-                branch voraus
-            </p>
-            <p class="code">git push</p><p> der git pullrequest wurde in den master geschrieben (gemerged)</p>
-
-
-            <h3>Summary</h3>
-            <ul>
-                <li>Es gibt ein verteiltes Versionskontrollsystem</li>
-                <li>Es gibt drei Bereiche</li>
-                <ul>
-                    <li>Repository</li>
-                    <li>Staging</li>
-                    <li>Arbeitsverzeichnis</li>
-                </ul>
-                <li>fast alle Befehle lassen sich lokal ausführen</li>
-            </ul>
-            <img src="rsc/Tutorial_ThomasClaudius.png" alt="">
-        </div>
-    <!--  end of div Git-Grundlagen für Entwickler-->
-    </div>
-
-    <div>
-        <h3>Git richtig productiv nutzen</h3>
-        <a class="ytLink" href="https://www.youtube.com/watch?v=GOX1C1qdSys">Vortrag Yoututbe</a>
-
-        <p>git ist im Grunde dezentrale Lösung</p>
-
-        <p>Git hub Lösungen:
-            Azure Repos (microsoft)
-            GitHub (auch gekauft von microsoft)
-        </p>
-
-        <p>Meinung zu GitFlow? ...ist nicht unbedingt sinnvoll
-            die großen Tech Companys nutzen es auch nicht
-            sonder
-        </p>
-        <p>arbeiten mit Trunk based developement TBD</p>
-        <p>auch genannt: Mainline-Dev. (MLD) oder GitHub-Flow</p>
+        <h1>GIT Basics</h1>
+        <h3>Repositories</h3>
+        <p>these are the containers for your projects</p>
         <ul>
-            <li>Keep a high quality master branch, that is locked by policies</li>
-            <li>use <b>topic branches</b> for all new features and bug fixes</li>
-            <li>merge branches into master using a <b>pull request</b></li>
+            <li>local repository</li>
+            <li>remote repository</li>
         </ul>
 
-        <h3>Fortsetzung</h3>
-        <p>nächste Datei über folgendes Video</p>
-        <p class="ytLink"><a href="https://www.youtube.com/watch?v=GOX1C1qdSys">Wie man mit Git richtig produktiv wird | Michael Kaufmann</a>
-        Beschreibt Workflow und wie man Git sinnvoll einsetzt und auf was man verzichten kann</p>
+        <h1>Quellen</h1>
+        <a href="https://git-scm.com/docs/gittutorial">git scm docs</a>
 
-        <p>Test Test Git</p>
+
+
+        <h1>GIT Basiseinstellungen</h1>
+
+        <h3>GIT global user name and email</h3>
+        <p class="code">git config --global user.name "Your Name Comes Here"</p>
+        <p class="code">git config --global user.email you@yourdomain.example.com</p>
+        <p>these are just used to show remember who does the commit</p>
+
+
+
+
+
+
+        <h1>wichtigste GIT Befehle</h1>
+
+        <h3>Git Initialisieren</h3>
+        <p>terminal -> cd ... zum Betreffenden Ordner.. </p>
+
+
+        <p class="code">git init .</p>
+        <p>Den gesamten Ordner ins Git Verzeichnis bringen</p>
+
+        <p class="code">ls -a</p>
+        <p>check for hidden files -> check if there is a .git folder</p>
+        <br>
+
+        <p class="code">git status</p>
+        <p>den aktuellen Status anschauen -> welche Änderungen habe ich gemacht welche noch nicht "repositioniert" sind</p>
+        
+        <p class="code">git status -s</p>
+        <p>kurze status Abfrage</p>
+
+
+
+        <p class="code">git add .</p>
+        <p>durch . werden alle Dateien im Repository werden in der aktuellen Git-Version gestaged(hinzugefügt),
+            -> die Änderungen sind somit breit zum commiten</p>
+
+            
+        <p class="code">git add *fileName*</p>
+        <p>die genannte Datei im Repository wird in der aktuellen Git-Version gestaged(hinzugefügt),
+            -> die Änderungen sind somit breit zum commiten</p>
+
+        <p class="code">git commit -m "*insert comment on this commit, must have!*"</p>
+        <p>git commit erstellen mit (-m essage) Änderungscommentar angeben</p>
+
+
+        <p>Alternatively, instead of running git add beforehand, you can use</p>
+        <p class="code">git commit -a</p>
+        <p>which will automatically notice any modified (but not new) files, add them to the index, and commit, all in one step.</p>
+        
+
+        <p class="code">git diff</p>
+        <p>alle Änderungen welche noch nicht gestaged sind anzeigen</p>
+        <p class="code">git diff --cached</p>
+        
+
+        <h3>Git Änderungen Verwerfen</h3>
+        <p class="code">git checkout allesNeu.html</p>
+        <p>Die aktuellen Änderungen in der Datei "allesNeu.html" zurücksetzen</p>
+
+
+        <h3>Git Commit Verlauf</h3>
+        <p class="code">git log</p>
+        <p>Commit Verlauf anzeigen</p>
+
+
+        <h3>Git help / user's manuel</h3>
+        <p class="code">man git-*</p>
+        <p>* stands for any git command</p>
+        <p class="code">man git-log</p>
+        <p> shows the manuel for git log</p>
+        
+
+        
+
+
+
+        <h3>Using the remote repository</h3>
+        <p class="code">git push origin master</p>
+        <p>git ask for the credentials (of github)</p>
+
+
+        <h3>resolving merge conflict</h3>
+        <a href="https://www.youtube.com/watch?v=JtIX3HJKwfo"> https://www.youtube.com/watch?v=JtIX3HJKwfo</a>
+
+
+    
+
+        <br>
+        <a href="https://www.youtube.com/watch?v=lR_hYwCAaH4" class="ytLink">GIT Remotes - The Coding Train</a></p>
+
+        <a href="https://www.youtube.com/watch?v=JtIX3HJKwfo" class="ytLink">Resolving Merge Conflicts</a>
+
+        <a href="https://git-scm.com/book/de/v2/Appendix-C%3A-Git-Kommandos-Setup-und-Konfiguration" class="nLink">How to set up other Text editor</a>
+
+
+
+        <h3>GOOG TO KNOW</h3>
+        <p class="code">press q when ((END)) blocks the terminal</p>
+        <h3>USING VIM (VI) for GIT changes</h3>
+        <p>:i</p>
+        <p>--INSERT-- shows up end of the line</p>
+        <p class="code">ESC + :wq</p>
+
+        <p class="code">git config --global core.editor "code --wait"</p>
+        <p>set up Visual Studio Code as Commit Text Editor // set code (VS Code to PATH!!!)</p>
+
+        <p class="code">git config --global core.editor "vim"</p>
+        <p>setting up vim as (terminal) editor better way as standart</p>
+
+
+        <p class="code">git config --global core.editor vi</p>
+        <p>default on my mac</p>
+
+        <h3>Zusammenfassung using VIM</h3>
+        <div class="post-text" itemprop="text">
+            <p>If you haven't change the default git's editor, that "new view" is the Vi program.</p>
+            
+            <p>To save your commit message using Vi, follow the next steps:</p>
+            
+            <ol>
+            <li>Type <code>i</code></li>
+            <li>Write your message</li>
+            <li>Type the <code>ESC</code> key</li>
+            <li>Type <code>:wq</code></li>
+            <li>DONE! :D</li>
+            </ol>
+            
+            <p>Typing <code>:q</code>, step 4, is not enough beacuse just means <strong>QUIT</strong> without saving. That's why you need <code>:wq</code>, which means <strong>WRITE</strong> and <strong>QUIT</strong>.</p>
+            
+            <p>You can write your commit message using your favourite editor(vim, emacs, etc.). To achieve this, you can use configuration parameter or environment variables, listed in order:</p>
+            
+            <ol>
+            <li><strong>GIT_EDITOR</strong> environment variable</li>
+            <li><strong>core.editor</strong> configuration option</li>
+            <li><strong>VISUAL</strong> environment variable</li>
+            <li><strong>EDITOR</strong> environment variable</li>
+            </ol>
+            
+            <p>Using the configuration option type something like this:</p>
+            
+            <pre><code>$git config --global core.editor "nano"
+            </code></pre>
+            
+            <p>Or if you want to use enviroment variables, add something like this to your <code>.bash_profile</code></p>
+            
+            <pre><code>$export GIT_EDITOR="PATH/TO/YOUR/EDITOR"
+            </code></pre>
+        </div>
+
+
+        <h3>Writing good COMMIT messages</h3>
+        <p>A commit message should answer three primary questions:
+            <li>Why is this change necessary?</li> 
+            <li>How does this commit address the issue?</li>
+            <li>What effects does this change have?</li>
+        </p>
+        <br><br>
+
+        <h3>edit git commit</h3>
+        <p class="code">git commit --amend -m "Fixed bug" -m "Closes #issue"</p>
+        <a href="https://engagor.github.io/blog/2017/04/03/how-to-edit-commit-description/" class="nLink">Edit a commit</a>
+
+
+
+
+
+        <h3>Check your GIT Settings</h3>
+        <p class="code">git config --list</p>
+        <p class="code">git config -l</p>
+        <p class="code">git config -l --show-origin</p>
+        
+        <p>file:/usr/local/git/etc/gitconfig</p> <p>in diesem file werden die Einstellungen gespeichert</p>
+
+        <p>You can also check what Git thinks a specific key’s value is by typing git config <key>:</p>
+        <p class="code">$ git config user.name</p>
+
+        
+
+        <div>
+            <h3>GIT Grundlagen Video (Notizen)</h3>
+            <a href="https://www.youtube.com/watch?v=6uvzIMdqV2U">Git-Grundlagen für Entwickler - Alles was man zum Einstieg wissen muss</a>
+        
+            <p class="code">git config --global core.editor notepad</p> 
+            <p>choose notepad text editor (microsoft version) for edit commit message</p>
+        
+        
+            <h4>Das Arbeitsverzeichnis</h4>
+            <p>Aufbau: 
+                <div>Arbeitsbereich (der Projektordner (mit .git Repository))</div>
+                <div>Staging Bereich (.git-Ordner)</div>
+                <div>Repository/Datenbank (.git)</div> 
+                <div class="picture_div">
+                    <img src="rsc/Arbeitsverzeichnis_git.png" alt="Arbeitsverzeichnis">
+                </div>
+            </p>
+            
+            <div>
+                <p>das Arbeitsverzeichnis</p>
+                <ol>
+                    <li>Checkout</li>
+                    <li>Staging</li>
+                    <li>Commit</li>        
+                </ol>
+            </div>
+
+            <div>
+                <p>Dateizustände</p>
+                <ul>
+                    <li>untracked</li>
+                    <li>unmodified</li>
+                    <li>modified</li>
+                    <li>staged</li>
+                </ul>
+                <div class="picture_div">
+                    <img src="rsc/Datei_status_git.png" alt="Arbeitsverzeichnis">
+                </div>
+            </div>
+
+            <div>
+                <p class="code">git status</p> 
+                <p>wenn text rot -> nicht in der Staging area</p>
+                <p>wenn text grün in der staging area-> fertig für den commit</p>
+
+            </div>
+
+            <div>
+                <h3 >weitere nützliche Befehle</h3>
+                <ul>
+                    <li>Datei entfernen</li>
+                    <p class="code">git rm dateiname.txt</p>
+                    
+                    <li>Diff anzeigen</li>
+                    <p class="code">git diff</p>
+                    <p>-> vergleicht Arbeitsverzeichnis mit dem Repository!</p>
+                    <p>nach: <p class="code">git add .</p> sind keine Änderungen mehr sichtbar</p>
+
+                    <p>Dateien vergleichen vom Arbeitsbereich zu aktuellen Commit geht mit</p>
+                    <p class="code">git diff --staged</p>
+
+
+                    <li>Diff in Tool anzeigen</li>
+                    <p class="code">git difftool</p>
+
+                </ul>
+                <p class="highlight">Datei entfernen</p>
+                <p class="code"></p>
+
+
+                <p>"working tree clean" entspricht dem Arbeitsverzeichnis (welches leer ist)</p>
+
+
+                <ul>
+                    <li>Zeigt commits an (mit Snapshot-Hash SHA1)</li>
+                    <p class="code">git log</p>
+
+                    <p>schönere Darstellung</p>
+                    <p class="code">git log --pretty=oneline</p>
+
+
+
+                    <p>nochmal zu einem bestimmten Zeitpunkt des Code springen</p>
+                    <p class="code">git checkout 1f7a6</p>
+                    <p>ersten 5 Zeichen vom Hash kopieren</p>
+
+
+                    <p> "you are in 'detached Head' state ... " </p>
+
+
+                    <p>Zurück zum master Branch (ursprünglicher Stand vor checkout</p>
+                    <p class="code">git checkout master</p>
+
+                    <p>mit <p class="code">git checkout </p> wechsel möglich zu</p>
+                    <ul>
+                        <li>Snapshots</li>
+                        <li>branches</li>
+                        <li>(selbst hinterlegte) tags</li>
+
+                    </ul>
+                </ul>
+
+            </div>
+
+            <div>
+                <h3>Dateien ignorieren</h3>
+                <ul>
+                    <li>.gitIgnore Datei anlegen</li>
+                    <li>Syntax:</li>
+                    <p># startende Zeilen werdne ignoriert</p>
+                    <p>! Negationen</p>
+                    <p> / am Anfang um Rekursionen zu vermeiden</p>
+                    <p> / am Ende, um Verzeichnis zu wählen</p>
+
+                </ul>
+                <p>global patterns:</p>
+                <p>Beispiele</p>
+                <p>
+                    #Alle txt Dateien ignorieren
+                    *.txt
+                    #nur txt-dateien aus root-ordner ignorieren
+                    /*.txt
+                    # aber nicht die readme
+                    !readme.txt
+                    # alle dateien im myProject/bin -Verzeichnis ignorieren
+                    myProject/bin
+                    # alle .suo Dateien im myProject-Verzeichnis
+                    # inclusive Unterverzeichnisse ignorieren
+                    myProject/**/*.suo
+                </p>
+            </div>
+
+            <div>
+                <h3>Branches</h3>
+                <ul>
+                    <li>Branches anzeigen</li>
+                    <p class="code">git branch</p>                
+
+                    <li>Branch erstellen</li>
+                    <p class="code">git branch myNewFeature</p>
+                    <li>branch ins Arbeitsverzeichnis ausschecken</li>
+                    <p class="code">git checkout myNewFeature</p>
+
+                    <li>zurück zum Master wechsel</li>
+                    <p class="code">git checkout master</p>
+                </ul>
+
+                <p class="highlight">Änderungen in Master branch übernehmen</p>
+                <p>Branch mergen (vom master branch aus ausrufen)</p>
+                <p class="code">git merge myNewFeature</p>
+
+                <p class="code">git log --pretty=oneline --graph</p>
+
+
+                <p class="highlight">resolve merge conflict</p>
+                <p> &lt;&lt;&lt;&lt;&lt;&lt;&lt;HEAD  is from master branch (or branch)</p>
+                <p class="code">Here is code... writen</p>
+                <p>======= trennen des codes</p>
+                <p class="code">code... das ist in dem anderen branch passiert</p>
+                <p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; myNewFeature</p>
+
+                <p class="highlight">tag erstellen</p>
+                <p class="code">git checkout 14fa2 </p>
+                <p>ersten 5 Zeichen vom Hashwert eines commits</p>
+                <p class="code">git tag -a AllesNeuFertigerEntwurf</p>
+                
+                <p class="code">git status</p>
+                <p>keine neuen Änderungen</p>
+                <p class="code">git tag</p>
+                <p>zeigt alle erstellten Tags an</p>
+
+                <p class="code">git checkout AllesNeuFertigerEntwurf</p>
+                <p>checkout zu "Tagnamen" (in das Arbeitsverzeichnis /working tree geladen)</p>
+
+
+
+
+                <p>Zusammenfassung: zum speichern ist es immer erforderlich 
+                    im master branche zu arbeiten oder einen neuen branch zu erstellen
+                    um diesen zu commiten
+                </p>
+
+
+                <p>Das waren die Basics (local mit git arbeiten)</p>            
+            </div>
+            <br><br>
+
+            <div>
+                <h1>Remotes</h1>
+                <br>
+                <h3 class="highlight">Remotes hinzugefügen</h3>
+                <ul>
+                    <li>Remotes abfragen</li>
+                    <p class="code">git remote</p>
+                    <li>Remote anlegen</li>
+                    <p class="code">git remote add *name* *url*</p>
+                </ul>
+
+                <h3 class="highlight">Remote aktualisieren</h3>
+                <ul>
+                    <li>branch in remote pushen</li>
+                    <p class="code">git push *remote-name* *branch-name*</p>
+                    
+                    <p class="code">git push origin master</p>
+                    <p>den master branch pushen</p>
+
+                    <li>Upstream mit -u parameter setzen</li>
+                    <p class="code">git push -u origin master</p>
+                    <p>das bedeutet das der locale master branch mit dem remote master branch
+                        verknüpft ist -> dann ist das angeben danach nicht mehr notwendig und man kann 
+                        dann nur mit "git push" die Änderungen hochladen
+                    </p>
+                    <p class="code">git push</p>
+                </ul>
+            </div>
+
+            <br><br>
+            <div>
+                <h3 class="highlight">Lokales Repo aktualisieren</h3>
+                <ul>
+                    <li>zum ersten mal in aktuelles Verzeichnis kopieren</li>
+                    <p class="code">git clone *remote-url* .</p>
+                    <p>Punkt am Ende nicht vergessen um ins aktuelle Verzeichnis zu clonen</p>
+                    <br>
+
+                    <li>neue Daten laden und mergen</li>
+                    <p class="code">git pull origin master</p>
+
+                    <p>oder mit gesetzten upstream: <p class="code">git pull</p></p>
+                </ul>
+
+                <p class="highlight">Pulling</p>
+                <p><p class="code">git pull</p> merged remote-branch in lokalen branch </p>
+                
+                <p>auch in zwei Schritten möglich: <p class="code">git fetch</p> 
+                und dann <p class="code">git merge</p></p>
+
+                <p>Erklärung wozu: 
+                    Bsp. ich will los von der Arbeit, aber erst noch weiter arbeiten..
+                    mache schnell noch einen <p class="code">git fetch</p> , hole mir die Änderungen
+                    und kann dann im Zug einfach weiter arbeiten und die Änderungen dabei auch anschauen
+
+                </p>
+
+                <h3 class="highlight">Remotes auflisten</h3>
+                <p class="code">git branch -a </p>
+                <p>zeigt auch die remote branches (nicht nur die localen)</p>
+
+
+                
+                
+                <h3 class="highlight">Praxisbespiel Remote hinzufügen bei vorhandenen Repository</h3>
+                <p class="code">git remote add origin *git-url*</p>
+
+                <p class="code">git remote</p>
+                <p>zeigt alle remotes an</p>
+
+                <p class="code">git remote -v</p>
+                <p>zeigt alle remotes mit URL an</p>
+
+                <p class="code">git push -u origin master</p>
+                <p>pusht den aktuellen Stand des Repos zum (vorher verbundenen) remote (git)</p>
+            </div>
+
+            <div>
+                <h3>Pull Request durchführen</h3>
+                <p class="code">git push orgin *my-branch-name-toPush*</p>
+                <p class="code">git push orgin superFeature</p>
+
+                <p>pull request -> füge bitte die Änderungen in den remote (deinen) master ein</p>
+
+
+                <p>wenn jemand anderes einen PULL Request gemacht hat</p>
+                <p class="code">git branch</p><p>nochmal branch checken</p>
+                <p class="code">git pull</p><p>änderungen holen</p>
+                <p class="code">git merge superFeature</p><p>merge mal local superFeature</p>
+                <p>git merge ** Updating fd0890 ... e8z4293 Fast Forward
+                    means that no other changes in master are done after this state from merging
+                </p>
+                <p>branch is ahead of 'origin/master' by 1 commit -> genau diesen einen commit ist der aktuelle 
+                    branch voraus
+                </p>
+                <p class="code">git push</p><p> der git pullrequest wurde in den master geschrieben (gemerged)</p>
+
+
+                <h3>Summary</h3>
+                <ul>
+                    <li>Es gibt ein verteiltes Versionskontrollsystem</li>
+                    <li>Es gibt drei Bereiche</li>
+                    <ul>
+                        <li>Repository</li>
+                        <li>Staging</li>
+                        <li>Arbeitsverzeichnis</li>
+                    </ul>
+                    <li>fast alle Befehle lassen sich lokal ausführen</li>
+                </ul>
+                <img src="rsc/Tutorial_ThomasClaudius.png" alt="">
+            </div>
+        <!--  end of div Git-Grundlagen für Entwickler-->
+        </div>
+
+        <div>
+            <h3>Git richtig productiv nutzen</h3>
+            <a class="ytLink" href="https://www.youtube.com/watch?v=GOX1C1qdSys">Vortrag Yoututbe</a>
+
+            <p>git ist im Grunde dezentrale Lösung</p>
+
+            <p>Git hub Lösungen:
+                Azure Repos (microsoft)
+                GitHub (auch gekauft von microsoft)
+            </p>
+
+            <p>Meinung zu GitFlow? ...ist nicht unbedingt sinnvoll
+                die großen Tech Companys nutzen es auch nicht
+                sonder
+            </p>
+            <p>arbeiten mit Trunk based developement TBD</p>
+            <p>auch genannt: Mainline-Dev. (MLD) oder GitHub-Flow</p>
+            <ul>
+                <li>Keep a high quality master branch, that is locked by policies</li>
+                <li>use <b>topic branches</b> for all new features and bug fixes</li>
+                <li>merge branches into master using a <b>pull request</b></li>
+            </ul>
+
+            <h3>Fortsetzung</h3>
+            <p>nächste Datei über folgendes Video</p>
+            <p class="ytLink"><a href="https://www.youtube.com/watch?v=GOX1C1qdSys">Wie man mit Git richtig produktiv wird | Michael Kaufmann</a>
+            Beschreibt Workflow und wie man Git sinnvoll einsetzt und auf was man verzichten kann</p>
+
+            <p>Test Test Git</p>
+        </div>
     </div>
-
 </body>
 </html>
