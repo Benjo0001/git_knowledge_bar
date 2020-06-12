@@ -402,6 +402,11 @@
                     <li>Remote anlegen</li>
                     <p class="code">git remote add *name* *url*</p>
                 </ul>
+                <p>best practise</p>
+                <p class="code">git remote add origin *url*</p>
+
+
+
 
                 <h3 class="highlight">Remote aktualisieren</h3>
                 <ul>
@@ -536,6 +541,65 @@
 
             
             <a class="ytLink" href="https://www.youtube.com/watch?v=114ixsKOB-w">How to structure projects on Github | Developer Knowledge by Brandy Morgan</a>
+        </div>
+
+
+
+        <div><h3>Common bugs</h3>
+            <p> * branch            master     -> FETCH_HEAD
+                fatal: refusing to merge unrelated histories</p>
+            
+            <h4>Solution:</h4>    <p class="code">git pull origin master --allow-unrelated-histories</p>
+            <p>This pushes even if the new added remote repository is not empty Link: 
+                <a href="https://www.educative.io/edpresso/the-fatal-refusing-to-merge-unrelated-histories-git-error"></a>
+            </p>
+
+
+            <p>git deleted files are not commited</p>
+            <p class="code">git add -u</p>
+
+        </div>
+
+        <h3>Push a new Remote with a new created README file</h3>
+        <p class="code">
+            echo "# JAVA_SE1_WS19" >> README.md
+            git init
+            git add README.md
+            git commit -m "first commit"
+            git remote add origin git@github.com:Benjo0001/JAVA_SE1_WS19.git
+            git push -u origin master
+        </p>
+
+
+
+        <div>
+            <h1>GIT config - name & email</h1>
+
+            <h3>Set the username/email globally</h3>
+            <p class="code">git config --global user.name "Your global username"
+                git config --global user.email "your@email.com"</p>
+            <p>This sets the user + email for all git repos, if not spezified new name + email in the repo</p>
+
+            
+            <h3>Set the username/email for a specific repository</h3>
+            <p class="code">git config user.name "Your project specific name"
+                git config user.email "your@project-specific-email.com"</p>
+            <p>This overrides the global settings for this spezific repository, very useful!</p>
+
+            <h3>Verify Settings</h3>
+            <p class="code">git config --global --get user.name
+                git config --global --get user.email</p>
+
+            <p class="code">git config user.name "Your project specific name"
+                git config user.email "your@project-specific-email.com"</p>
+            <p> cd.. into the spezific repo</p>
+            
+        </div>
+
+
+        <div>
+            <h3>Nice Git / GitHub Tutorials</h3>
+            <p><a href="https://smarterco.de/"></a></p>
         </div>
     </div>
 </body>
